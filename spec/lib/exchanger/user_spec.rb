@@ -17,4 +17,12 @@ RSpec.describe Exchanger::User do
   it 'returns full_name' do 
     expect(user.full_name).to eq('Allen Rails')
   end
+
+  it 'has account' do 
+    expect(user.account).to be_an_instance_of(Exchanger::Account)
+  end
+
+  it 'has zero balance by default' do 
+    expect(user.balance).to eq(0)
+  end
 end
