@@ -1,3 +1,6 @@
+# ruby modules
+require 'forwardable'
+
 # utils
 require_relative 'exchanger/utils/uid'
 
