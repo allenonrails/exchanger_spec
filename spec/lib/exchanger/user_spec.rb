@@ -26,3 +26,4 @@ RSpec.describe Exchanger::User do
     expect(user.balance).to eq(0)
   end
 end
+
