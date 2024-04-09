@@ -1,7 +1,7 @@
 module Exchanger 
-  class NotEnoughMoney < StandartError 
+  class NotEnoughMoney < StandardError 
   end
 
-  class IncorrectSum < StandartError 
+  class IncorrectSum < StandardError 
   end
 end
