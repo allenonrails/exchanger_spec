@@ -29,6 +29,18 @@ RSpec.describe Exchanger::Account do
   context 'when performing money withdrawal' do 
     before { allen.deposit 300 }
 
+    specify "#transfer_with_conversation" do 
+      allow(allen).to receive(:convert).
+        with(sum: 100, from: :usd, to: :eur).
+        and_return(80)
+
+      allen.transfer_with_conversation kirill, 100, :usd, :eur
+
+      expect(allen.balance).to eq(200)
+      expect(kirill.balance).to eq(80)
+      expect(allen).to have_received(:convert).once
+    end
+
     specify "#transfer" do 
       expect(kirill.balance).to eq(0)
 

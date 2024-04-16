@@ -1,6 +1,7 @@
 module Exchanger 
   class Account
     include Exchanger::Utils::Uid
+    include Exchanger::Api::Converter
 
     attr_reader :uid, :balance
 
@@ -12,6 +13,13 @@ module Exchanger
     def transfer(receiver, amount)
       withdraw amount
       receiver.deposit amount
+    end
+
+    def transfer_with_conversation(receiver, amount, in_currency, out_currency)
+      converted_amount = convert sum: amount, from: in_currency, to: out_currency
+
+      withdraw amount
+      receiver.deposit converted_amount
     end
 
     def withdraw(amount)
@@ -28,3 +36,4 @@ module Exchanger
     end
   end
 end
+

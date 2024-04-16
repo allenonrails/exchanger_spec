@@ -5,3 +5,4 @@ module Exchanger
   class IncorrectSum < StandardError 
   end
 end
+

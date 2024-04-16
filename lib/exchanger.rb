@@ -4,6 +4,9 @@ require 'forwardable'
 # utils
 require_relative 'exchanger/utils/uid'
 
+# api 
+require_relative 'exchanger/api/converter'
+
 # errors 
 require_relative 'exchanger/errors'
 
