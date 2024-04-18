@@ -11,10 +11,22 @@ RSpec.describe Exchanger::Account do
     expect(allen.uid).to be_an_instance_of(String)
   end
 
+  it 'the uid is still in development' do 
+    allow(allen).to receive(:uid).and_return("РЕСЛЬЫЫЫЫЫ")
+
+    expect(allen.uid).to eq("РЕСЛЬЫЫЫЫЫ")
+  end
+
+
   describe "#deposit" do 
     it 'allows to deposit correct sum' do 
       kirill.deposit 30 
       expect(kirill.balance).to eq(30)
+    end
+
+    it 'the balance is still in development' do 
+      allow(kirill).to receive(:balance).and_return("Миллиарды")
+      expect(kirill.balance).to eq("Миллиарды")
     end
 
     it 'does not allow to deposit a negative sum' do 
