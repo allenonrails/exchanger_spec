@@ -8,7 +8,7 @@ module Exchanger
       end
 
       def currencies(params = {})
-        get "currencies", self, params
+        get "", self, params
       end
 
       def create_currency(params)

@@ -14,10 +14,9 @@ module Exchanger
       def options(client)
         {
           headers: {
-            accept: 'apllication/json',
-            'x-api-key' => client.token
+            accept: 'apllication/json'
           },
-          url: BASE_URL
+          url: BASE_URL + "?apikey=#{client.token}"
         }
       end
     end

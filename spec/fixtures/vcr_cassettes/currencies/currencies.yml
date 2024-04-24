@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.freecurrencyapi.com/v1/latest?apikey=<LOCALISE_API_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - apllication/json
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 24 Apr 2024 13:37:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Charset:
+      - utf-8
+      X-Execution-Time:
+      - '14.07'
+      X-Cost:
+      - '1'
+      Cache-Control:
+      - no-cache, private
+      X-Ratelimit-Limit-Quota-Month:
+      - '5000'
+      X-Ratelimit-Remaining-Quota-Month:
+      - '4995'
+      X-Forwarded-Proto:
+      - https
+      X-Forwarded-Port:
+      - '443'
+      X-Request-Id:
+      - d987bde7-80db-4dcf-850e-4ba403afdc9e
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Ratelimit-Limit-Quota-Minute:
+      - '10'
+      X-Ratelimit-Remaining-Quota-Minute:
+      - '9'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=Y%2FF6k%2FE7Fx9ilAIGkb2vFhwgr8KH2KzMbpxxs8JXL8WNpoy%2FH6%2Bbqc8ZnFTykWQEBnYYlE3fFT%2BNNBakmt9npNQRRSKP9PeaqrCbquwRHLbz7bVRQl450xhIDnrvgyS5s%2BlEUGeEQ%2Byw4w%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 87967cb3bb132e0f-ARN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"AUD":1.5409801753,"BGN":1.8289202638,"BRL":5.1251105193,"CAD":1.3663001508,"CHF":0.9115601391,"CNY":7.2448209701,"CZK":23.5352333339,"DKK":6.9687812119,"EUR":0.9343201754,"GBP":0.8031000829,"HKD":7.8333912204,"HRK":6.7986111138,"HUF":367.0088540273,"IDR":16201.675843992,"ILS":3.7683504605,"INR":83.2409888758,"ISK":140.5941520971,"JPY":154.7728206946,"KRW":1368.8624808612,"MXN":16.9569920318,"MYR":4.7793307397,"NOK":10.9041315469,"NZD":1.6847302585,"PHP":57.5485587784,"PLN":4.0244405164,"RON":4.6487708452,"RUB":93.2202718493,"SEK":10.8054320917,"SGD":1.3608101572,"THB":36.9173148108,"TRY":32.5224564512,"USD":1,"ZAR":19.1043926724}}'
+  recorded_at: Wed, 24 Apr 2024 13:37:17 GMT
+recorded_with: VCR 6.2.0
