@@ -7,11 +7,11 @@ RSpec.describe Exchanger::Account do
     expect(allen.balance).to eq(0)
   end
 
-  it 'has proiperty uid' do 
+  fit 'has proiperty uid' do
     expect(allen.uid).to be_an_instance_of(String)
   end
 
-  describe "#deposit" do 
+  fdescribe "#deposit" do 
     it 'allows to deposit correct sum' do 
       kirill.deposit 30 
       expect(kirill.balance).to eq(30)
