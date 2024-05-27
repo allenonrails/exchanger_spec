@@ -1,25 +1,18 @@
 module Exchanger 
-  class User
+  class User < Dry::Struct
     extend Forwardable
-    
-    attr_reader :name, :surname, :account
+
+    attribute :name, Types::Coercible::String
+    attribute :surname, Types::Coercible::String.optional
 
     def_delegators :account, :balance
 
-    def initialize(name, surname)
-      @name = name.is_a?(String) ? name : name.to_s
-      @surname = surname
-      create_account
+    def after_initialize()
+      @account ||= Account.new(self)
     end
 
     def full_name 
       "#{@name} #{@surname}"
-    end
-
-    private 
-
-    def create_account 
-      @account = Account.new self
     end
   end
 end

@@ -1,13 +1,13 @@
 module Exchanger 
-  class Account
+  class Account < Dry::Struct
     include Exchanger::Utils::Uid
     include Exchanger::Api::Converter
 
-    attr_reader :uid, :balance
+    attribute :balance, Types::Integer.default { 0 }
+    attribute :uid, Types::String.optional
 
     def initialize(user)
-      @uid = get_hash user.name, user.surname
-      @balance = 0
+      @uid = get_hash(user.name, user.surname)
     end
 
     def transfer(receiver, amount)

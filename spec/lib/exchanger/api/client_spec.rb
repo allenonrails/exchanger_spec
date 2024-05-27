@@ -1,5 +1,5 @@
 RSpec.describe Exchanger::Api::Client do
-  let(:test_client) {described_class.new(ENV.fetch('API_TOKEN') { 'api123' })}
+  let(:test_client) {described_class.new(token: ENV.fetch('API_TOKEN') { 'api123' })}
   let(:currency_code) { 'AFN' }
 
   specify "#currency" do 

@@ -1,3 +1,6 @@
+# dry
+require_relative 'exchanger/utils/dry_types'
+
 # ruby modules
 require 'forwardable'
 require 'faraday'

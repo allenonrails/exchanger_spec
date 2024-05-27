@@ -1,6 +1,6 @@
 RSpec.describe Exchanger::User do 
-  let(:user) { described_class.new 'Allen', 'Rails'}
-  let(:user_no_name) { described_class.new nil, 'Rails'}
+  let(:user) { described_class.new name: 'Allen', surname: 'Rails'}
+  let(:user_no_name) { described_class.new name: nil, surname: 'Rails'}
 
   it 'returns name' do 
     expect(user.name).to eq('Allen')

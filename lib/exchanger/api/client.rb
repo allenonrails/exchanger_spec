@@ -1,13 +1,11 @@
+require_relative '../utils/dry_types'
+
 module Exchanger 
   module Api
-    class Client
+    class Client < Dry::Struct
       include Exchanger::Api::Rest 
 
-      attr_reader :token
-
-      def initialize(token)
-        @token = token
-      end
+      attribute :token, Types::Coercible::String
     end
   end
 end
